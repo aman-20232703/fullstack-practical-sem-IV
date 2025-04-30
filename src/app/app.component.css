@@ -1,0 +1,41 @@
+.btn{
+    border-radius: 50%;
+    height: 50px;
+    margin: 10px;
+    color: orange;
+    /* background-color: green; */
+    cursor: pointer;
+    width: 90px;
+    border: 1px solid black;
+}
+.btn:hover{
+    border: 1px solid white;
+}
+
+.bg-red{
+background-color: red;
+}
+
+.bg-black{
+background-color: black;
+}
+
+.bg-green{
+background-color: green;
+}
+
+.h2{
+    height: 35px;
+    width: 80px;
+    background: burlywood;
+    margin: auto;
+}
+
+.one{
+    text-align: center;
+    
+}
+
+.error{
+    color: red;
+}

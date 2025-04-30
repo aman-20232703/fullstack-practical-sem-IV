@@ -1,0 +1,506 @@
+<h1>hello! aman</h1>
+<!--interpoletion -->
+<h1>{{title}}</h1>
+<h2>{{x+y}}</h2>
+<h2>{{3+4+6-2%3}}</h2>
+<h3>{{a+ " " +b}}</h3>
+<h3>{{a==b}}</h3>
+<h4>{{a.toUpperCase()}}</h4>
+<hr>
+
+<app-login></app-login>
+<app-sinup></app-sinup>
+<app-profile></app-profile>
+
+<hr>
+<!-- Data Types -->
+<h1>Data Types</h1>
+<button (click)="handleClickFunction()">click me</button>
+<button (click)="updateParameters(2,3)">parameter</button>
+<hr>
+<!-- Counter -->
+<h1>Counter</h1>
+<!-- <div>
+    <h1>counter</h1>
+    <div class="one">
+        <h2 class="h2">{{count}}</h2>
+        <div >
+            <button (click)="handleIncrement()" class="btn bg-red" >increment</button>
+            <button (click)="handleReset()" class="btn bg-black">reset</button>
+            <button (click)="handleDecrement()" class="btn bg-green">decrement</button>
+
+            <button (click)="handleCounter('plus')" class="btn bg-red" >increment</button>
+            <button (click)="handleCounter('reset')" class="btn bg-black">reset</button>
+            <button (click)="handleCounter('minus')" class="btn bg-green">decrement</button>
+        </div>
+    </div>
+
+</div> -->
+<br>
+<br>
+<hr>
+<!-- events -->
+<h1>Events</h1>
+<button (click)="handleEvent()">event</button>
+<br><br>
+<button class="btn1" name="login" (click)="handleMouseEvent($event)">mouseevent</button>
+<br><br>
+<div (mouseenter)="mouseEnterEvent($event)" style="background-color: greenyellow; height:100px; width:100px">
+</div>
+<br><br>
+<div (mouseleave)="mouseLeaveEvent($event)" style="background-color: rgb(166, 166, 236); height:100px; width:100px">
+</div>
+<br><br>
+<input type="text" (input)="handleInputEvent($event)" name="user">
+<br><br>
+<input type="text" (focus)="focusEvent($event)" name="user">
+<br><br>
+<input type="text" (blur)="blurEvent($event)" name="user">
+<br><br>
+<hr>
+
+<!-- get and set input field value -->
+<h1>Get & Set</h1>
+<h1>user name: {{displayName}}</h1>
+<input type="text" value="{{Name}}" (input)="getName($event)" placeholder="enter user name">
+<button (click)="showName()">get name</button>
+<button (click)="setName()">set name</button>
+<br><br>
+
+<!-- <h1>user email: {{email}}</h1>
+<input type="text" value="{{email}}"  placeholder="enter email" #emailfield>
+<button (click)="getEmail(emailfield.value)" >get email</button> -->
+<h1>user email: {{displayemail}}</h1>
+<input type="text" value="{{email}}" placeholder="enter email" (input)="getEmail($event)">
+<button (click)="showEmail()">get email</button>
+<button (click)="setEmail()">set email</button>
+
+<br><br>
+<hr>
+<!-- If else -->
+<h1>If else</h1>
+<h1>if else | control flow</h1>
+@if(display){
+<div style="background-color:red; height:100px; width:100px">
+</div>
+}
+@if(m==10){
+<div style="background-color:rgb(118, 219, 122); height:100px; width:100px">
+</div>
+}
+<button (click)="hide()">hide</button>
+<button (click)="show()">show</button>
+<button (click)="toggle()">toggle</button>
+
+<hr>
+
+<h1>else if | control flow</h1>
+<button (click)="toggletwo()">toggle div</button>
+@if(togglediv){
+<div style="background-color:rgb(118, 219, 122); height:100px; width:100px">
+</div>
+}
+@else{
+<div style="background-color:rgb(229, 69, 88); height:100px; width:100px">
+</div>
+}
+
+<hr>
+<!-- Else if -->
+<h1>Else-if</h1>
+@if(color==1){
+<div style="background-color:rgb(118, 219, 211); height:100px; width:100px">
+</div>
+}
+@else if(color==2){
+<div style="background-color:rgb(226, 96, 213); height:100px; width:100px">
+</div>
+}
+@else if(color==3){
+<div style="background-color:rgb(118, 219, 122); height:100px; width:100px">
+</div>
+}
+@else if(color==4){
+<div style="background-color:rgb(204, 231, 51); height:100px; width:100px">
+</div>
+}
+@else{
+<div style="background-color:rgb(4, 4, 4); height:100px; width:100px">
+</div>
+}
+<button (click)="handleColor(1)">blue</button>
+<button (click)="handleColor(2)">violet</button>
+<button (click)="handleColor(3)">green</button>
+<button (click)="handleColor(4)">yellow</button>
+<button (click)="handleColor(10)">others</button>
+
+<input type="text" (input)="handleInput($event)">
+
+<br><br>
+<hr>
+<!-- Switch -->
+<h1>switch case</h1>
+@switch(Color){
+@case("red"){
+<h3 style="color:red">hello world!</h3>
+}
+@case("blue"){
+<h3 style="color:blue">hello world!</h3>
+}
+@case("green"){
+<h3 style="color:green">hello world!</h3>
+}
+@case("yellow"){
+<h3 style="color:yellow">hello world!</h3>
+}
+@default{
+<h3 style="color:black">hello world!</h3>
+}
+}
+
+<button (click)="colorHandle('red')">red</button>
+<button (click)="colorHandle('blue')">blue</button>
+<button (click)="colorHandle('green')">green</button>
+<button (click)="colorHandle('yellow')">yellow</button>
+<button (click)="colorHandle('other')">other</button>
+<input type="text" placeholder="enter your number" (input)="handleInnput($event)">
+
+<hr>
+<!-- For loop -->
+<h1>For loop</h1>
+@for(item of users; track item){
+<h2>{{item}}</h2>
+}
+@for(list of students;track list.name){
+<h2>
+    <span>{{list.name}}</span>
+    <span>{{list.age}}</span>
+    <span>{{list.email}}</span>
+    <button (click)="getname(list.age)">getname</button>
+</h2>
+
+}
+<hr>
+<!-- Signals -->
+<h1>Signals</h1>
+<h1>{{Count()}}</h1>
+<h1>{{X}}</h1>
+
+<button (click)="updatevalue()">button</button>
+<br><br>
+
+<button click="updateValue('inc')">increment</button>
+<h2>{{Count()}}</h2>
+<!-- 1st method-->
+<button click="updateValue('dec')">decrement</button>
+<br><br>
+<!-- 2nd method-->
+<button click="Count.set(Count()+1)">increment</button>
+<h2>{{Count()}}</h2>
+<button click="Count.set(Count()-1)">decrement</button>
+<hr>
+
+<!--Computed signals-->
+<h1>Computed signals</h1>
+<h3>{{z}}</h3>
+<h3>{{g()}}</h3>
+<button (click)="showvalue()">show</button>
+<button (click)="updatex()">update</button>
+<hr>
+
+<!-- Effects -->
+<h1>Effects</h1>
+<h2>{{username()}}</h2>
+<button (click)="username.set('kumar')">update user</button>
+<br><br>
+<h2>{{countt()}}</h2>
+@if(displayheading){
+<h2 style="background-color:aquamarine">heading</h2>
+}
+<button (click)="togglevalue()">toggle</button>
+<hr>
+
+<!-- contextual variables-->
+<H1>contextual variables</H1>
+@for(agent of agents;track agent;
+let i=$index;
+let f=$first;
+let l=$last
+){
+<h4>{{l}}</h4>
+<!-- @if(f || l){
+        <h3 style="background-color:red">{{i+1}} & {{agent}}</h3>
+    }@else{
+        <h3 style="background-color:blue">{{i+1}} & {{agent}}</h3>
+    } -->
+
+@if($odd){
+<h3 style="background-color:red">{{1}} & {{agent}}</h3>
+}@else{
+<h3 style="background-color:blue">{{i+1}} & {{agent}}</h3>
+}
+}
+<hr>
+
+<!-- *two way binding* -->
+<h1>Two Way Binding</h1>
+<!-- 1st method -->
+<input [(ngModel)]="naam" type="text" placeholder="enter your name">
+<h3>{{naam}}</h3>
+
+<!-- 2nd method -->
+<!-- <input type="text" (input)="typename($event)" placeholder="enter your name"> -->
+<!-- -->
+<hr>
+
+<!-- *to do list*-->
+<!-- <h1>To Do List</h1>
+<input type="text" [(ngModel)]="task" placeholder="enter task">
+<button (click)="addtask()">add task</button> -->
+                                <!-- <h2>{{task}}</h2> -->
+<!-- @for(task of tasklist;track task.id){
+<ul style="display:flex; justify-content:space-between;list-style:none;">
+    <li>{{task.id}}</li>
+    <li>{{task.task}}</li>
+    <li><button (click)="deletetask(task.id)">delete</button></li>
+</ul>
+} -->
+
+<hr>
+<h3 [style.backgroundColor]="colorr" [style.fontSize]="fontsize" [style.fontSize.px]="fontsize">dynamic styling</h3>
+
+<h2 [style.fontSize]="zoom? headingSizebig:headingSizesmall">heading</h2>
+<!-- <h2 [style.fontSize]="zoom? '10px':'20px'">heading</h2> -->
+<button (click)="updateheadingSize()">toggle font</button>
+<hr>
+
+<!-- directives -->
+<h2 *ngIf="Show">derivative heading</h2>
+<!-- ngFor directive -->
+<ul>
+    <li *ngFor="let people of peoples">
+        {{people}}
+    </li>
+
+    <li *ngFor="let person of persons">
+        {{person.name}},{{person.age}},{{person.email}}
+    </li>
+
+</ul>
+
+<hr>
+<h2 *ngIf="showw">ngif heading</h2>
+
+<div *ngIf="login; else elseBlock">
+    <a href="">logout</a>
+</div>
+<ng-template #elseBlock>
+    <a href="">login</a>
+</ng-template>
+
+<div *ngIf="block==0">
+    <h2>heading 0</h2>
+</div>
+<div *ngIf="block==1">
+    <h2>heading 1</h2>
+</div>
+<div *ngIf="block==2">
+    <h2>heading 2</h2>
+</div>
+<button (click)="tupdaeblock()">updatae block</button>
+<hr>
+<!--<div [*ngSwitch]="coLorr">
+    <h1 *ngSwitchCase="orange" style="background-color: orange;"> orange</h1>
+    <h1 *ngSwitchCase="white" style="background-color: white;"> white</h1>
+    <h1 *ngSwitchCase="green" style="background-color: green;"> green</h1>
+    <h1 *ngSwitchCase="blue" style="background-color: blue;"> blue</h1>
+    <h1 *ngSwitchCase="yellow" style="background-color:yellow;"> yellow</h1>
+    <h1 *ngSwitchCase="pink" style="background-color: pink;"> pink</h1>
+</div>
+<button (click)="colorchange('orange')">orange</button>
+<button (click)="colorchange('white')">white</button>
+<button (click)="colorchange('green')">green</button>
+<button (click)="colorchange('blue')">blue</button>
+<button (click)="colorchange('yellow')">yellow</button>
+<button (click)="colorchange('pink')">pink</button>-->
+<hr>
+<router-outlet>
+    <ul>
+        <li>
+            <a routerLink="/login">login</a>
+        </li>
+        <li>
+            <a routerLink="/profile">profile</a>
+        </li>
+        <li>
+            <a routerLink="/sinup">sinup</a>
+        </li>
+    </ul>
+</router-outlet>
+<hr>
+<app-header></app-header>
+<hr>
+
+<!-- <form action="" method="post">
+    <input type="text" placeholder="enter your name" [formControl]="namme" ngModel>
+    <br><br>
+    <input type="password" placeholder="enter password" [formControl]="password" ngModel>
+    <br><br>
+    <button type="button" (click)="displayvalue()">login</button>
+    <button (click)="setvalues()">set value</button>
+    <h3>{{namme.value}}</h3>
+</form> -->
+<hr>
+
+<!-- <form action="" method="get" [formGroup]="profileForm" (ngsubmit)="onsubmit()" >
+
+    <input type="text" placeholder="enter your name" [formControlName]="user">
+    <span *ngIf="user?.hasError('required')">name is required</span>
+    <span class="error" *ngIf="user?.invalid &&(user?.dirty || user?.touched)">user name required</span>
+    <br><br>
+    <input type="password" placeholder="enter password" [formControlName]="password">
+    <span *ngIf="password?.hasError('required')">password is required</span>
+    <span class="error" *ngIf="password?.invalid &&(password?.dirty || password?.touched)">password name required</span>
+    <br><br>
+    <input type="email" placeholder="enter email" [formControlName]="email">
+    <span *ngIf="email?.hasError('required')">email is required</span>
+    <span class="error" *ngIf="email?.invalid &&(email?.dirty || email?.touched)">email name required</span>
+    <br><br>
+    <button>submit</button>
+    <button type="button" (click)="setValue()">set value</button>
+</form> -->
+<!-- <h3>{{this.profileForm.value.namme}}</h3>
+<h3>{{this.profileForm.value.password}}</h3>
+<h3>{{this.profileForm.value.email}}</h3> -->
+
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input type="text" #user="ngModel" required placeholder="enter valid user" name="user" ngModel>
+    <span class="error" *ngIf="user.invalid && user.touched">enter user name</span>
+
+    <br><br>
+    <input type="password" maxlength="8" minlength="4" #password="ngModel" placeholder="enter valid password"
+        name="password" ngModel>
+    <span class="error" *ngIf="password.invalid && password.touched">enter valid password</span>
+
+    <br><br>
+    <input type="text" #email="ngModel" email placeholder="enter email" name="email" ngModel>
+    <span class="error" *ngIf="email.invalid && email.touched">enter valid email</span>
+
+    <br><br>
+    <input type="text" #address="ngModel" pattern="[a-zA-Z0-9\s]+" placeholder="enter address" name="address" ngModel>
+    <span class="error" *ngIf="address.invalid && address.touched">full address</span>
+
+    <br><br>
+    <select #gender="ngModel" required name="gender" id="" ngModel>
+        <option value="">select gender</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select>
+    <span class="error" *ngIf="gender.invalid && gender.touched">plz select gender</span>
+    <br><br>
+    <input type="range" min="0" max="20" name="range" ngModel>
+    <br><br>
+    <button [disabled]="userForm.invalid">add user</button>
+</form>
+
+<hr>
+
+<h1>add data from parent to child element</h1>
+<app-login user="aman kumar"></app-login> statically pass data
+<app-login [user]="userName"></app-login> by dynamically pass data
+<app-login [user]="selectedUser.value"></app-login>
+<select #selectedUser (onuserchange)="selectedUser.value">
+    <option value="aman">aman</option>
+    <option value="akash">akash</option>
+    <option value="aryan">aryan</option>
+    <option value="abhi">abhi</option>
+</select>
+
+<hr>
+<h2>reuse component with passing data</h2>
+@for(students of student;track students){
+<div>
+    <!-- {{students}} -->
+    <!-- <app-home [mens]='men'></app-home> -->
+    <app-students [students]="students"></app-students>
+</div>
+}
+<hr>
+<app-sinup (getboys)="handleboys($event)"></app-sinup>
+@for(boy of boys;track boy){
+<h2>{{boy}}</h2>
+}
+<hr>
+<h2>{{work}}</h2>
+<h2>{{work | uppercase}}</h2>
+<h2>{{work | titlecase}}</h2>
+<h2>{{date | date}}</h2>
+<h2>{{date | date:'fullDate'}}</h2>
+<h2>{{date | date:'fullDate'| uppercase}}</h2>
+<h2>{{date | date:'hh:mm:ss'}}</h2>
+<h2>{{amount | currency:'INR'}}</h2>
+<h2>{{amount | currency:'EUR'}}</h2>
+
+<hr>
+<h1 style="background-color:yellow;">Angular Practical</h1>
+
+<h1>practica1</h1>
+<app-welcome></app-welcome>
+<hr>
+<h1>practical 2</h1>
+<p style="color:yellow; padding:10px; background-color:darkgrey" *ngIf="showtext">https://www.bing.com/search?q=w3rdqw3r&cvid=99aea4076ac84a17bd4ec3f450f4a0fe&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBBzc3OWowajeoAgCwAgA&FORM=ANNTA0&PC=U531</p>
+<button (click)="toggletext()">Toggletext</button>
+<h1>practical 3</h1>
+<ul>
+    <li *ngFor="let name of names">
+        {{name}}
+    </li>
+</ul>
+<hr>
+<h1>practical 4</h1>
+<input type="text" [(ngModel)]="user_names" placeholder="enter user name">
+<h3>{{user_names}}</h3>
+<hr>
+<h1>practical 5</h1>
+<form #companyForm="ngForm" (ngSubmit)="Details(companyForm.value)">
+    <input type="text" #employee="ngModel" required placeholder="enter employee name" name="employee" ngModel>
+    <span class="error" *ngIf="employee.invalid && employee.touched"> enter minimum 3 digit name</span>
+
+    <br><br>
+    <input type="email" #email="ngModel" placeholder="enter email" name="email" email required ngModel>
+    <span class="error" *ngIf="email.invalid && email.touched"> enter valid email</span>
+
+    <br><br>
+    <input type="password" #password="ngModel" minlength="4" maxlength="8" placeholder="enter password" name="password"
+        required ngModel>
+    <span class="error" *ngIf="password.invalid && password.touched"> enter valid password</span>
+
+    <br><br>
+    <button [disabled]="companyForm.invalid">submit</button>
+</form>
+
+<hr>
+<h1>practical 6</h1>
+<h2>counter</h2>
+<div class="one">
+    <h2 class="h2">{{count}}</h2>
+    <div>
+        <button (click)="handleCounter('plus')" class="btn bg-red">Increment</button>
+        <button (click)="handleCounter('reset')" class="btn bg-black">Reset</button>
+        <button (click)="handleCounter('minus')" class="btn bg-green">Decrement</button>
+    </div>
+
+</div>
+<hr>
+<h1>practical 7</h1>
+<h1>To Do List</h1>
+<input type="text" [(ngModel)]="task" placeholder="enter task">
+<button (click)="addtask()">add task</button>
+@for(task of tasklist;track task.id){
+<ul style="display:flex; justify-content:space-between;list-style:none;">
+    <li>{{task.id}}</li>
+    <li>{{task.task}}</li>
+    <li><button (click)="deletetask(task.id)">delete</button></li>
+</ul>
+}

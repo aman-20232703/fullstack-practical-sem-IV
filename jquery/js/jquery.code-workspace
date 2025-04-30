@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Angular"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jquery"
+	}
+}
