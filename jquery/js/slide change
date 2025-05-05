@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Practical 2</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.source ul li').draggable({helper:'clone'});
+            $('.dest').droppable({drop:function(event,ui){
+                $('#book').append($('<li></li>').text(ui.draggable.text()));
+            }});
+
+            });
+        
+    </script>
+    <style>
+        .source{
+            border:5px solid black;
+            opacity:.5 ;
+            width: 200px;
+            float: left;
+            
+        }
+        .dest{
+            border:5px solid black;
+            opacity: .5;
+            width: 200px;
+            float: right;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drop and Down functionality</h1>
+    <div class="source">
+        <h3>Available Book</h3>
+        <ul>
+            <li>Book 1</li>
+            <li>Book 2</li>
+            <li>Book 3</li>
+            <li>Book 4</li>
+            <li>Book 5</li>
+        </ul>
+    </div>
+    <div class="dest">
+        <h3>Add Books</h3>
+        <ol id="book"></ol>
+    </div>
+</body>
+</html>
